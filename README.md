@@ -1,5 +1,7 @@
 # Pauling-Scale
 An interactive, educational web application designed to help students and chemistry enthusiasts visualize, calculate, and master the concepts behind the Pauling Scale of Electronegativity.
+https://aniketavdhut550-design.github.io/Pauling-Scale/
+
 # ⚗ Pauling Scale
 
 An interactive chemistry learning website based on the
