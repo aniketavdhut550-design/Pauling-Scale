@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pauling Scale</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <h1>Pauling Scale</h1>
+
+    <p>
+        Understand Electronegativity & Chemical Bonding
+    </p>
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVIGATION TABS
+===================================================== -->
+
+<div class="tabs">
+
+    <button
+        class="tab-button active"
+        onclick="openTab('concepts', this)"
+    >
+        📖 Concepts
+    </button>
+
+
+    <button
+        class="tab-button"
+        onclick="openTab('checker', this)"
+    >
+        ⚗ Bond Checker
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     CONCEPTS TAB
+===================================================== -->
+
+<div
+    id="concepts"
+    class="tab-content active"
+>
+
+
+    <div class="intro">
+
+        <h2>Learn the Basics</h2>
+
+        <p>
+            Click on a question to learn about the
+            Pauling Scale, electronegativity and
+            chemical bonding.
+        </p>
+
+    </div>
+
+
+
+    <!-- QUESTION 1 -->
+
+    <div class="question-box">
+
+        <button
+            class="question"
+            onclick="toggleAnswer(this)"
+        >
+
+            What is Pauling Scale?
+
+            <span>+</span>
+
+        </button>
+
+        <div class="answer">
+
+            The Pauling scale is used to measure the
+            electronegativity of chemical elements.
+            It shows how strongly an atom attracts
+            shared electrons in a chemical bond.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUESTION 2 -->
+
+    <div class="question-box">
+
+        <button
+            class="question"
+            onclick="toggleAnswer(this)"
+        >
+
+            What is Electronegativity?
+
+            <span>+</span>
+
+        </button>
+
+        <div class="answer">
+
+            Electronegativity is the ability of an atom
+            to attract shared electrons towards itself
+            in a chemical bond.
+
+            <br><br>
+
+            Fluorine has the highest electronegativity
+            on the Pauling scale.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUESTION 3 -->
+
+    <div class="question-box">
+
+        <button
+            class="question"
+            onclick="toggleAnswer(this)"
+        >
+
+            What is an Ionic Bond?
+
+            <span>+</span>
+
+        </button>
+
+        <div class="answer">
+
+            An ionic bond is formed when electrons are
+            transferred from one atom to another.
+
+            <br><br>
+
+            Example: NaCl
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUESTION 4 -->
+
+    <div class="question-box">
+
+        <button
+            class="question"
+            onclick="toggleAnswer(this)"
+        >
+
+            What is a Covalent Bond?
+
+            <span>+</span>
+
+        </button>
+
+        <div class="answer">
+
+            A covalent bond is formed when two atoms
+            share electrons with each other.
+
+            <br><br>
+
+            Examples: H₂, Cl₂ and CH₄.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUESTION 5 -->
+
+    <div class="question-box">
+
+        <button
+            class="question"
+            onclick="toggleAnswer(this)"
+        >
+
+            What is a Polar Covalent Bond?
+
+            <span>+</span>
+
+        </button>
+
+        <div class="answer">
+
+            A polar covalent bond occurs when electrons
+            are shared unequally between two atoms due
+            to their difference in electronegativity.
+
+            <br><br>
+
+            Example: H–Cl
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUESTION 6 -->
+
+    <div class="question-box">
+
+        <button
+            class="question"
+            onclick="toggleAnswer(this)"
+        >
+
+            What is a Non-Polar Covalent Bond?
+
+            <span>+</span>
+
+        </button>
+
+        <div class="answer">
+
+            A non-polar covalent bond occurs when
+            electrons are shared equally between atoms.
+
+            <br><br>
+
+            Examples: H₂ and Cl₂.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERIODIC TABLE
+    ================================================= -->
+
+    <section class="periodic-section">
+
+        <h2 class="periodic-title">
+            Periodic Table
+        </h2>
+
+        <p class="periodic-description">
+
+            Click any element to view its atomic number,
+            name and Pauling electronegativity.
+
+        </p>
+
+
+        <div
+            id="periodicTable"
+            class="periodic-table"
+        ></div>
+
+
+        <div
+            id="fBlock"
+            class="f-block"
+        ></div>
+
+
+        <div
+            id="elementInfo"
+            class="element-info"
+        ></div>
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     BOND CHECKER TAB
+===================================================== -->
+
+<div
+    id="checker"
+    class="tab-content"
+>
+
+
+    <div class="checker">
+
+        <h2>⚗ Check Bond Type</h2>
+
+        <p class="checker-description">
+
+            Enter two electronegativity values or select
+            elements from the Periodic Table.
+
+        </p>
+
+
+        <div class="checker-grid">
+
+
+            <!-- EN VALUES -->
+
+            <div class="checker-card">
+
+                <h3>
+                    🔵 Enter Electronegativity Values
+                </h3>
+
+
+                <input
+                    type="number"
+                    id="val1"
+                    step="0.01"
+                    placeholder="Element 1 EN"
+                >
+
+
+                <input
+                    type="number"
+                    id="val2"
+                    step="0.01"
+                    placeholder="Element 2 EN"
+                >
+
+
+                <button
+                    class="check-button"
+                    onclick="calculateBond()"
+                >
+                    Check Bond Type
+                </button>
+
+            </div>
+
+
+
+            <!-- SYMBOLS -->
+
+            <div class="checker-card symbol-card">
+
+                <h3>
+                    🔴 Enter Element Symbols
+                </h3>
+
+
+                <input
+                    type="text"
+                    id="el1"
+                    placeholder="Element 1 (e.g., H)"
+                >
+
+
+                <input
+                    type="text"
+                    id="el2"
+                    placeholder="Element 2 (e.g., O)"
+                >
+
+
+                <button
+                    class="check-button red-button"
+                    onclick="getFromBackend()"
+                >
+                    Check Using Symbols
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESULT -->
+
+        <div
+            class="result"
+            id="result"
+        >
+
+            Enter values or select elements
+            to check the bond type.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    Pauling Scale Chemistry Project
+
+    <br><br>
+
+    Made with <span>♥</span> for Chemistry Learning
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,958 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #073b5c 0%,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            #430b12 0%,
+            transparent 30%
+        ),
+
+        #050b12;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    text-align: center;
+
+    padding: 45px 20px 30px;
+
+    background: rgba(3, 10, 17, 0.9);
+
+    border-bottom: 1px solid #14384c;
+}
+
+header h1 {
+
+    font-size: 52px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4ed8ff,
+            #ffffff,
+            #ff3848
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+
+    margin-top: 12px;
+
+    color: #8fa9b8;
+
+    font-size: 17px;
+}
+
+
+
+/* =====================================================
+   TABS
+===================================================== */
+
+.tabs {
+
+    width: 94%;
+
+    max-width: 1200px;
+
+    margin: 25px auto 0;
+
+    display: flex;
+
+    background: #08131d;
+
+    border: 1px solid #17445d;
+
+    border-radius: 12px 12px 0 0;
+
+    overflow: hidden;
+}
+
+.tab-button {
+
+    width: 50%;
+
+    padding: 17px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #8fa9b8;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.tab-button:hover {
+
+    background: #0c2535;
+
+    color: white;
+}
+
+.tab-button.active {
+
+    background:
+        linear-gradient(
+            90deg,
+            #087db6,
+            #0c5b83
+        );
+
+    color: white;
+
+    box-shadow:
+        0 0 20px rgba(
+            30,
+            190,
+            255,
+            0.25
+        );
+}
+
+
+
+/* =====================================================
+   TAB CONTENT
+===================================================== */
+
+.tab-content {
+
+    width: 94%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: none;
+
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+
+    display: block;
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+
+    padding:
+        30px
+        5px
+        20px;
+}
+
+.intro h2 {
+
+    color: #55d6ff;
+
+    margin-bottom: 10px;
+
+    font-size: 27px;
+}
+
+.intro p {
+
+    color: #a5bac5;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+.question-box {
+
+    margin-bottom: 10px;
+
+    background:
+        rgba(
+            8,
+            24,
+            36,
+            0.85
+        );
+
+    border:
+        1px solid #16445d;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.question-box:hover {
+
+    border-color: #24b9f2;
+
+    box-shadow:
+        0 0 15px
+        rgba(
+            20,
+            180,
+            255,
+            0.12
+        );
+}
+
+.question {
+
+    width: 100%;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.question span {
+
+    color: #4fd4ff;
+
+    font-size: 25px;
+
+    transition: 0.3s;
+}
+
+.question.active span {
+
+    transform:
+        rotate(45deg);
+
+    color: #ff3948;
+}
+
+.answer {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 20px;
+
+    color: #b2c7d1;
+
+    line-height: 1.7;
+
+    transition:
+        max-height 0.35s ease,
+        padding 0.35s ease;
+}
+
+.answer.show {
+
+    max-height: 300px;
+
+    padding:
+        0 20px
+        20px;
+}
+
+
+
+/* =====================================================
+   PERIODIC TABLE
+===================================================== */
+
+.periodic-section {
+
+    margin-top: 35px;
+
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    background:
+        rgba(
+            5,
+            17,
+            27,
+            0.9
+        );
+
+    border:
+        1px solid #16445d;
+
+    border-radius: 12px;
+
+    overflow-x: auto;
+}
+
+.periodic-title {
+
+    color: #55d6ff;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.periodic-description {
+
+    color: #8ea7b5;
+
+    margin-bottom: 25px;
+
+    line-height: 1.6;
+}
+
+.periodic-table {
+
+    min-width: 1050px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            18,
+            minmax(
+                48px,
+                1fr
+            )
+        );
+
+    gap: 5px;
+}
+
+
+
+/* =====================================================
+   ELEMENT
+===================================================== */
+
+.element {
+
+    min-height: 70px;
+
+    padding: 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    border:
+        1px solid #24566f;
+
+    background: #102633;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    position: relative;
+}
+
+.element:hover {
+
+    transform:
+        scale(1.08);
+
+    z-index: 10;
+
+    border-color:
+        #55d6ff;
+
+    box-shadow:
+        0 0 18px
+        rgba(
+            40,
+            200,
+            255,
+            0.45
+        );
+}
+
+.element .number {
+
+    font-size: 9px;
+
+    color: #91aab8;
+
+    align-self:
+        flex-start;
+}
+
+.element .symbol {
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    color: white;
+}
+
+.element .en {
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+    color: #59d7ff;
+}
+
+
+
+/* =====================================================
+   ELEMENT COLORS
+===================================================== */
+
+.alkali {
+
+    background: #39151a;
+
+    border-color: #a72b38;
+}
+
+.alkaline {
+
+    background: #352414;
+
+    border-color: #9b6a20;
+}
+
+.transition {
+
+    background: #12313a;
+
+    border-color: #287d91;
+}
+
+.post-transition {
+
+    background: #142b38;
+
+    border-color: #3b7894;
+}
+
+.metalloid {
+
+    background: #18372f;
+
+    border-color: #3b9b7b;
+}
+
+.nonmetal {
+
+    background: #102f3a;
+
+    border-color: #2d9bb7;
+}
+
+.halogen {
+
+    background: #302016;
+
+    border-color: #d47a30;
+}
+
+.noble {
+
+    background: #25172f;
+
+    border-color: #8d4fc2;
+}
+
+.lanthanide {
+
+    background: #291a32;
+
+    border-color: #b15bc5;
+}
+
+.actinide {
+
+    background: #38191f;
+
+    border-color: #d95168;
+}
+
+
+
+/* =====================================================
+   F BLOCK
+===================================================== */
+
+.f-block {
+
+    margin-top: 18px;
+
+    min-width: 1050px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            15,
+            minmax(
+                48px,
+                1fr
+            )
+        );
+
+    gap: 5px;
+
+    padding-left: 12%;
+}
+
+
+
+/* =====================================================
+   ELEMENT INFORMATION
+===================================================== */
+
+.element-info {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    display: none;
+
+    background: #07131d;
+
+    border:
+        1px solid #1c6886;
+
+    border-radius: 10px;
+}
+
+.element-info.show {
+
+    display: block;
+}
+
+.element-info h3 {
+
+    color: #55d6ff;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.element-info p {
+
+    color: #b5c8d1;
+
+    margin: 6px 0;
+}
+
+.element-info strong {
+
+    color: white;
+}
+
+.select-element-button {
+
+    margin-top: 15px;
+
+    padding:
+        11px 18px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #087fc1;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.select-element-button:hover {
+
+    background: #0ba9e8;
+}
+
+
+
+/* =====================================================
+   BOND CHECKER
+===================================================== */
+
+.checker {
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    background:
+        rgba(
+            7,
+            20,
+            30,
+            0.85
+        );
+
+    border:
+        1px solid #16445d;
+
+    border-radius: 12px;
+}
+
+.checker h2 {
+
+    color: #55d6ff;
+
+    margin-bottom: 10px;
+}
+
+.checker-description {
+
+    color: #91aab7;
+
+    margin-bottom: 25px;
+}
+
+.checker-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+}
+
+.checker-card {
+
+    padding: 22px;
+
+    background: #081722;
+
+    border:
+        1px solid #1a465e;
+
+    border-radius: 10px;
+}
+
+.checker-card h3 {
+
+    margin-bottom: 18px;
+
+    color: white;
+}
+
+.symbol-card {
+
+    border-color:
+        rgba(
+            255,
+            50,
+            65,
+            0.45
+        );
+}
+
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+input {
+
+    width: 100%;
+
+    padding:
+        13px 15px;
+
+    margin-bottom: 12px;
+
+    background: #050d14;
+
+    color: white;
+
+    border:
+        1px solid #28526a;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+input:focus {
+
+    border-color:
+        #28c7ff;
+
+    box-shadow:
+        0 0 10px
+        rgba(
+            40,
+            199,
+            255,
+            0.15
+        );
+}
+
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.check-button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #087fc1,
+            #12aee8
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.check-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 20px
+        rgba(
+            0,
+            174,
+            255,
+            0.25
+        );
+}
+
+.red-button {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d91f30,
+            #ff3c4b
+        );
+}
+
+.red-button:hover {
+
+    box-shadow:
+        0 5px 20px
+        rgba(
+            255,
+            50,
+            65,
+            0.25
+        );
+}
+
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: #050d14;
+
+    border:
+        1px solid #20526b;
+
+    border-radius: 9px;
+
+    color: #55d6ff;
+
+    font-size: 18px;
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        35px 20px;
+
+    color: #718896;
+
+    font-size: 14px;
+}
+
+footer span {
+
+    color: #ff3c4b;
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 700px) {
+
+    header h1 {
+
+        font-size: 38px;
+    }
+
+    header p {
+
+        font-size: 14px;
+    }
+
+    .checker-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .tabs {
+
+        width: 95%;
+    }
+
+    .tab-content {
+
+        width: 95%;
+    }
+
+    .periodic-section,
+    .checker {
+
+        padding: 18px;
+    }
+
+}
